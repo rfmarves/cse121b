@@ -1,0 +1,60 @@
+#quote_generator {
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 60px 50px 40px;
+    grid-gap: 20px;
+    /* align-items: center; */
+    justify-content: center;
+    max-width: 1000px;
+}
+
+.selectors {
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 1rem;
+    background-color: #eee;
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    vertical-align: middle;
+}
+
+.color_picker {
+    grid-column: span 2;
+}
+
+.color_buttons{
+    border: 2px solid rgba(0, 0, 0, .1);
+    padding: 1rem;
+    display: block;
+    margin: 0 auto;
+} 
+
+.color_picker .swatchy-element {
+    z-index: 10;
+    position: relative;
+    max-width: 310px;
+}
+
+#apply_button{
+    grid-column: 1/7;
+    z-index: 0;
+}
+
+#quote_block {
+    grid-column: 3/5;
+    align-items: center;
+    background-color: blueviolet;
+    color: white;
+    /* margin: auto; */
+    /* align-content: center; */
+}
+
+.quote_content {
+    margin: 30px 30px;
+}
+
+.quote_content p {
+    text-align: center;
+    margin: 10px;
+}
