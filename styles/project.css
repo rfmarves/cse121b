@@ -36,8 +36,13 @@
     max-width: 310px;
 }
 
-#apply_button{
-    grid-column: 1/7;
+#apply_button {
+    grid-column: 4/7;
+    z-index: 0;
+}
+
+#refresh_quote {
+    grid-column: 1/4;
     z-index: 0;
 }
 
@@ -59,13 +64,13 @@
     margin: 10px;
 }
 
-#apply_button, .random_button {
+#refresh_quote, #apply_button, .random_button {
     font-size: 17px;
     font-weight: 700;
     border-radius: 0.75em;
     background: #e8e8e8;
 }
 
-#apply_button:hover, .random_button:hover {
+#refresh_quote:hover, #apply_button:hover, .random_button:hover {
     background: #e8e8e8af;
 }
