@@ -58,3 +58,14 @@
     text-align: center;
     margin: 10px;
 }
+
+#apply_button, .random_button {
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 0.75em;
+    background: #e8e8e8;
+}
+
+#apply_button:hover, .random_button:hover {
+    background: #e8e8e8af;
+}
