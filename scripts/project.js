@@ -76,5 +76,3 @@ document.getElementById("refresh_quote").addEventListener("click", () => {refres
 document.getElementById("apply_button").addEventListener("click", () => {applyColors()});
 document.getElementById("show_author_button").addEventListener("click", () => {showAuthor()});
 document.getElementById("random_color_button").addEventListener("click", () => {getRandomColors("#bg_color_selection","#font_color_selection")});
-document.getElementById("font_color_selection").addEventListener("change", () => {refreshGlobalFontColor()});
-document.getElementById("bg_color_selection").addEventListener("change", () => {refreshGlobalBackground()});
