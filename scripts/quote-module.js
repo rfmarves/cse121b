@@ -21,12 +21,12 @@ export const addQuote = async (quoteSelector, authorSelector, quoteAuthor, quote
     else {
         parametrizedURL = `${randomQuoteURL}?genre=${quoteGenre}&author=${quoteAuthor}`;
     }
-    console.log(`getting quote from ${parametrizedURL}`);
+    // console.log(`getting quote from ${parametrizedURL}`);
     const response = await fetch(parametrizedURL);
     if (response.ok) {
-        console.log("quote fetched. Parsing...");
+        // console.log("quote fetched. Parsing...");
         let quoteJson = await response.json();
-        console.log("quote parsed. Adding to page...");
+        // console.log("quote parsed. Adding to page...");
         // console.log(quoteJson.data[0]);
         // console.log(quoteJson.data[0].quoteText);
         // console.log(quoteJson.data[0].quoteAuthor);
@@ -43,12 +43,12 @@ export const addQuote = async (quoteSelector, authorSelector, quoteAuthor, quote
 // function for random quote
 // returns quote and author array
 export const addRandomQuote = async (quoteSelector, authorSelector) => {
-    console.log("getting random quote");
+    // console.log("getting random quote");
     const response = await fetch(randomQuoteURL);
     if (response.ok) {
-        console.log("random quote fetched. Parsing...");
+        // console.log("random quote fetched. Parsing...");
         let quoteJson = await response.json();
-        console.log("quote parsed. Adding to page...");
+        // console.log("quote parsed. Adding to page...");
         // console.log(quoteJson.data[0]);
         // console.log(quoteJson.data[0].quoteText);
         // console.log(quoteJson.data[0].quoteAuthor);
@@ -59,10 +59,10 @@ export const addRandomQuote = async (quoteSelector, authorSelector) => {
 }
 
 const writeQuote = (quoteSelector, authorSelector, quoteText, quoteAuthor) => {
-    console.log("writing quote");
+    // console.log("writing quote");
     document.querySelector(quoteSelector).innerText = quoteText;
     document.querySelector(authorSelector).innerText = quoteAuthor;
-    console.log("quote written");
+    // console.log("quote written");
 }
 
 // function for quote with defined author and genre
@@ -75,13 +75,13 @@ export function getQuote(author, genre) {
 // function to get author list
 // appends author options to provided selector for SELECT element
 export const appendAuthorList = async (selector) => {
-    console.log("Fetching authors");
+    // console.log("Fetching authors");
     const response = await fetch(authorsURL);
     if (response.ok) {
-        console.log("Authors fetched, parsing json.");
+        // console.log("Authors fetched, parsing json.");
         let authorListJson = await response.json();
         let authorList = authorListJson.data;
-        console.log("Authors json parsed.");
+        // console.log("Authors json parsed.");
         // console.log(authorList);
         addAuthors(selector, authorList);
     }
@@ -90,19 +90,19 @@ export const appendAuthorList = async (selector) => {
 const addAuthors = async (selector, authorList) => {
     const elemToAdd = authorList.map( (item) => `<option value="${item}">${item}</option>`);
     document.querySelector(selector).innerHTML = `<option value="random">Random</option> ${elemToAdd.join("")}`;
-    console.log("appended authors");
+    // console.log("appended authors");
 }
 
 // function to get genre list
 // appends genre options to provided selector for SELECT element
 export const  appendGenreList = async (selector) => {
-    console.log("fetching genres");
+    // console.log("fetching genres");
     const response = await fetch(genresURL);
     if (response.ok) {
-        console.log("fetched genres, parsing Json");
+        // console.log("fetched genres, parsing Json");
         let genreListJson = await response.json();
         let genreList = genreListJson.data;
-        console.log("Genres json parsed");
+        // console.log("Genres json parsed");
         // console.log(genreList);
         addGenres(selector, genreList);
     }
@@ -111,5 +111,5 @@ export const  appendGenreList = async (selector) => {
 const addGenres = async (selector, genreList) => {
     const elemToAdd = genreList.map( (item) => `<option value="${item}">${item}</option>`);
     document.querySelector(selector).innerHTML = `<option value="random">Random</option> ${elemToAdd.join("")}`;
-    console.log("appended genres");
+    // console.log("appended genres");
 }
