@@ -88,12 +88,8 @@ export const appendAuthorList = async (selector) => {
 }
 
 const addAuthors = async (selector, authorList) => {
-    authorList.forEach(item => {
-        let authorOpt = document.createElement("option");
-        authorOpt.value = item;
-        authorOpt.innerText = item;
-        document.querySelector(selector).appendChild(authorOpt);
-    });
+    const elemToAdd = authorList.map( (item) => `<option value="${item}">${item}</option>`);
+    document.querySelector(selector).innerHTML = `<option value="random">Random</option> ${elemToAdd.join("")}`;
     console.log("appended authors");
 }
 
@@ -113,11 +109,7 @@ export const  appendGenreList = async (selector) => {
 }
 
 const addGenres = async (selector, genreList) => {
-    genreList.forEach(item => {
-        let genreOpt = document.createElement("option");
-        genreOpt.value = item;
-        genreOpt.innerText = item;
-        document.querySelector(selector).appendChild(genreOpt)
-    });
+    const elemToAdd = genreList.map( (item) => `<option value="${item}">${item}</option>`);
+    document.querySelector(selector).innerHTML = `<option value="random">Random</option> ${elemToAdd.join("")}`;
     console.log("appended genres");
 }

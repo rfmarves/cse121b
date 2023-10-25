@@ -30,21 +30,18 @@
         </ul>
     </nav>
     <main id="quote_generator">
-        <div class="selectors">
+        <div class="selectors" id="show_author_block">
+            <input type="submit" value="Enable Author Selection" id="show_author_button">
+        </div>
+        <div class="selectors hidden" id="author_block">
             <label for="author">Author:</label>
             <select name="author" id="author">
                 <option value="random">Random</option>
             </select>
         </div>
-        <div class="selectors">
+        <div class="selectors" id="genre_block">
             <label for="genre">Genre:</label>
             <select name="genre" id="genre">
-                <option value="random">Random</option>
-            </select>
-        </div>
-        <div class="selectors">
-            <label for="font_selector">Choose a font:</label>
-            <select name="font_selector" id="font_selection">
                 <option value="random">Random</option>
             </select>
         </div>
@@ -54,13 +51,16 @@
         </div>
         <div class="color_picker">    
             <button class="swatchy-button swatchy-trigger button2"><span class="swatchy-button-top">Font Color</span></button>
-            <input type="text" class="swatchy-output swatchy-display" id="font_color_selecction" disabled>
+            <input type="text" class="swatchy-output swatchy-display" id="font_color_selection" disabled>
         </div>
         <div>
-            <input type="submit" value="random colors" class="random_button">
+            <input type="submit" value="random colors" class="random_button" id="random_color_button">
         </div>
         <input type="submit" value="Refresh Quote" id="refresh_quote">
         <input type="submit" value="Apply Format" id="apply_button">
+        <div class="clarifying_note">
+            <p>Please note: the Author picker option takes a while to load (over 10,000 authors). Please be patient after enabling.</p>
+        </div>
         <article id="quote_block">
             <div class="quote_content">
                 <p id="quote_text">Select the parameters above</p>
@@ -68,6 +68,7 @@
             </div>
         </article>
     </main>
+
     <script type="module" src="scripts/project.js"></script>
 </body>
 </html>
